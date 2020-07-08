@@ -1,0 +1,20 @@
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Button from './Button';
+
+<Meta title="Design System|Avatar" component={Button} />
+
+# Button
+
+## Default button component
+
+<Story name="default">
+  <Button
+    label="CLICK ME"
+    onClick={() => alert('clicked')}
+    primary
+  />
+</Story>
+
+<Props of={Button} />
