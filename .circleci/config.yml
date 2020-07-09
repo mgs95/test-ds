@@ -12,6 +12,11 @@ jobs:
             - run: cd design-system && npm install
             - run: cd design-system && npm test
             - run: cd design-system && npx chromatic --project-token=wx8a9anyfh --exit-zero-on-changes
+            - run: |
+                if [ $CIRCLE_BRANCH = "master" ]
+                then
+                  cd design-system && yarn release
+                fi
 workflows:
   build-and-test:
     jobs:
