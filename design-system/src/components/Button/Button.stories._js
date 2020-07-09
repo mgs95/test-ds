@@ -6,12 +6,27 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Button',
-  component: Button,
+  parameters: {
+    component: Button,
+    componentSubtitle: 'Regular button component',
+  },
 };
 
 export const Text = () => (
   <Button label='Hello Button' onClick={action('clicked')} primary />
 );
+
+export const styles = () => (
+  <div>
+    <Button label='CLICK ME' theme={BUTTON_THEMES.GREY} />
+    <Button label='CLICK ME' theme={BUTTON_THEMES.DARK} />
+    <Button label='CLICK ME' primary />
+    <Button label='CLICK ME' border />
+  </div>
+);
+styles.story = {
+  parameters: { docs: { storyDescription: '4 styles are supported.' } },
+};
 
 export const knobs = () => (
   <Button

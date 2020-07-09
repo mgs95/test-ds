@@ -44,6 +44,10 @@ type Props = {
   autofocus?: boolean;
 };
 
+/**
+- Use button to perform all actions related with user interaction.
+- Buttons should also be used to perform routing actions.
+**/
 function Button({
   theme = BUTTON_THEMES.DEFAULT,
   border = false,
@@ -52,7 +56,7 @@ function Button({
   Icon = undefined,
   iconSize = 'icon-small',
   to = '',
-  onClick = function() {},
+  onClick = function () {},
   primary = false,
   disabled = false,
   loading = false,

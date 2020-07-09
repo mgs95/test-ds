@@ -1,0 +1,51 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+
+import Button, { BUTTON_THEMES } from './Button';
+
+<Meta title="Design System|Button" component={Button} />
+
+# Button
+
+## Regular button component
+
+Use button to perform all actions related with user interaction. Buttons should also be used to perform routing actions.
+
+<Preview withToolbar>
+  <Story name="standard">
+    <Button label='Hello Button' onClick={action('clicked')} primary />
+  </Story>
+</Preview>
+
+<Props of={Button} />
+
+## Usage
+
+Button is used to perform actions that required human interaction. By default the button shows an some text and no action. It is possible to redirect users to other pages by using tht `to` property. Making a link like this will transform the button into a `a` HTML element.
+
+
+### Styles
+
+4 styles are supported.
+
+<Story name="styles">
+  <div>
+    <Button label='CLICK ME' theme={BUTTON_THEMES.GREY} />
+    <Button label='CLICK ME' theme={BUTTON_THEMES.DARK} />
+    <Button label='CLICK ME' primary />
+    <Button label='CLICK ME' border />
+  </div>
+</Story>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Button
+    label='CLICK ME'
+    loading={boolean('Loading')}
+    theme={select('Size', Object.values(BUTTON_THEMES))}
+  />
+</Story>
