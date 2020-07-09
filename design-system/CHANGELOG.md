@@ -1,6 +1,6 @@
-# v0.1.1 (Thu Jul 09 2020)
+# v0.1.3 (Thu Jul 09 2020)
 
-- Created first version of the design system, with `Button` component.
+- build fixed
 
 #### Authors: 1
 
